@@ -6,7 +6,7 @@ module Sermepa
         DS_MERCHANT_CURRENCY:               CURRENCIES[params[:currency]      || Sermepa.config.currency],
         DS_MERCHANT_PRODUCTDESCRIPTION:     params[:description],
         DS_MERCHANT_TITULAR:                params[:titular],
-        DS_MERCHANT_ORDER:                  params[:order]                    || Time.now.to_i,
+        DS_MERCHANT_ORDER:                  params[:order]                    || Time.now.to_i*100 + rand(99),
         DS_MERCHANT_MERCHANTCODE:           params[:merchant_code]            || Sermepa.config.merchant_code,
         DS_MERCHANT_TERMINAL:               params[:terminal]                 || Sermepa.config.terminal,
         DS_MERCHANT_TRANSACTIONTYPE:        TRANSACTION_TYPES[params[:transaction_type]],
